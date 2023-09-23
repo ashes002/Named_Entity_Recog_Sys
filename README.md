@@ -61,3 +61,11 @@ sent2_tag1 sent2_tag2 sent2_tag3 ...
 ...
 ```
 The sentences should be pre-tokenized. The code will split the sentences only from the space.
+
+# Dataset
+You can find the dataset from this [link](https://github.com/stefan-it/turkish-bert/issues/10#issuecomment-604907879). I split the dataset into three parts as train, validation, and test set. Split ratios are 0.8, 0.1, 0.1 respectively.
+
+
+
+
+
