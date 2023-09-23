@@ -96,6 +96,7 @@ python train.py --train_data train_words train_tags --valid_data valid_words val
 # Test
 
 A trained Turkish model file can be downloaded from [this](https://drive.google.com/open?id=1IYTSkX8VCi33-KYMrxrzN-up25hfEfX3) link.
+```
 python test.py -h
 usage: test.py [-h] --model_file MODEL_FILE --w2i_file W2I_FILE
 
@@ -106,7 +107,18 @@ optional arguments:
   --model_file MODEL_FILE
                         Trained model file
   --w2i_file W2I_FILE   Word2Index Vocabulary
+```
+w2i_file is generated from the pre-trained word embeddings vocabulary. You can generate it by using the following code.
+```
+w2v_model = load_wv(w2v_model_path) # FastText model path
+index2word = ["<pad>", "<unk>"] + w2v_model.index2word
+word2index = {word: index for index, word in enumerate(index2word)}
 
+with open("word2index.pkl", "wb") as f:
+    pickle.dump(word2index, f)
+```
+
+Turkish w2i_file can be downloaded from [this](https://drive.google.com/file/d/1mSU7oIbY1-G7PVr7NtSMS-F1Vdf5rZ3G/view) link.
 
 
 
