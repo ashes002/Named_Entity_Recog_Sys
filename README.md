@@ -120,5 +120,26 @@ with open("word2index.pkl", "wb") as f:
 
 Turkish w2i_file can be downloaded from [this](https://drive.google.com/file/d/1mSU7oIbY1-G7PVr7NtSMS-F1Vdf5rZ3G/view) link.
 
+# FastText Embeddings
+
+FastText embeddings for Turkish can be downloaded from [here](https://fasttext.cc/docs/en/crawl-vectors.html) (~2.6G). The code currently supports only the vec extension.
+
+# Results
+```
+              precision    recall  f1-score   support
+
+       B-LOC       0.95      0.95      0.95      1066
+       B-ORG       0.90      0.95      0.93       744
+       B-PER       0.95      0.94      0.95      1347
+       I-LOC       0.94      0.88      0.91       194
+       I-ORG       0.88      0.97      0.92       545
+       I-PER       0.95      0.96      0.95       654
+           O       1.00      0.99      1.00     38731
+
+    accuracy                           0.99     43281
+   macro avg       0.94      0.95      0.94     43281
+weighted avg       0.99      0.99      0.99     43281
+```
+
 
 
