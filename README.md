@@ -65,6 +65,47 @@ The sentences should be pre-tokenized. The code will split the sentences only fr
 # Dataset
 You can find the dataset from this [link](https://github.com/stefan-it/turkish-bert/issues/10#issuecomment-604907879). I split the dataset into three parts as train, validation, and test set. Split ratios are 0.8, 0.1, 0.1 respectively.
 
+# Train
+```
+python train.py -h
+-h, --help            show this help message and exit
+--train_data TRAIN_DATA [TRAIN_DATA ...]
+                    Training data
+--valid_data VALID_DATA [VALID_DATA ...]
+                    Validation Data
+--w2v_file W2V_FILE   Pre-trained Word Embeddings
+--hidden_dim HIDDEN_DIM
+                    Hidden dimension for the RNN
+--num_layers NUM_LAYERS
+                    Number of RNN Layers to use
+--bidirectional       Option to make the RNNs bidirectional
+--dropout_p DROPOUT_P
+                    Dropout probability for the embedding layer
+--device DEVICE       Device to run the model
+--n_epochs N_EPOCHS   Number of epochs to train the model
+--model_name MODEL_NAME
+                    Model name to save
+```
+
+```
+python train.py --train_data train_words train_tags --valid_data valid_words valid_tags 
+--w2v_file <w2v_file> --hidden_dim 64 --num_layers 2 --bidirectional 
+--dropout_p 0.3 --n_epochs 10 --device "cuda"
+```
+
+# Test
+
+A trained Turkish model file can be downloaded from [this](https://drive.google.com/open?id=1IYTSkX8VCi33-KYMrxrzN-up25hfEfX3) link.
+python test.py -h
+usage: test.py [-h] --model_file MODEL_FILE --w2i_file W2I_FILE
+
+Named Entity Recognition Testing
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --model_file MODEL_FILE
+                        Trained model file
+  --w2i_file W2I_FILE   Word2Index Vocabulary
 
 
 
