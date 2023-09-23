@@ -44,3 +44,20 @@ for token, tag in zip(sentence_tokens, tags):
 # anlatıyor      O
 # .              O
 ```
+# Data Format
+Sentences and the tags should be in separate files. Expected format is:
+
+train_words:
+```
+sent1_token1 sent1_token2 sent1_token3 ...
+sent2_token1 sent_2token2 sent2_token ...
+...
+```
+
+train_tags:
+```
+sent1_tag1 sent1_tag2 sent1_tag3 ...
+sent2_tag1 sent2_tag2 sent2_tag3 ...
+...
+```
+The sentences should be pre-tokenized. The code will split the sentences only from the space.
